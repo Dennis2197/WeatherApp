@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<div id="body">
+    <h1 style="background-color: white">Temperature in {{ city }}:</h1>
+<h2 style="background-color: white">{{ temp }}°C</h2>
+<p style="background-color: white">Enter another city name</p>
+<form action="locationTemp.html" method="POST" style="background-color: white">
+    {% csrf_token %}
+    <label>
+        <input type="text" name="textfield" style="background-color: white">
+    </label>
+    <button id="button" type="submit">Get Temperature</button>
+</form>
+    <form action="index.html" method="POST"style="background-color: white">
+        {% csrf_token %}
+        <button id="homeButton">Home</button>
+    </form>
+</div>
+</body>
+</html>
